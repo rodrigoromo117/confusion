@@ -28,21 +28,22 @@
                     <li class="nav-item active"><a class="nav-link" href="./aboutus.html"><span class ="fa fa-info fa-lg"></span>About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><span class ="fa fa-list fa-lg"></span>Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class ="fa fa-address-card fa-lg"></span>Contact</a></li>
-                </ul>
+                </ul>                
+                
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span>Login
+                    <a    id="loginbtn">
+                        <span class="fa fa-sign-in"></span> Login
                     </a>
-                </span>
+            </span>
             </div>
             
             
         </div>
     </nav>
     
-<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&Login modle &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&Login Modal &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="loginmodal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">           
             <div class="modal-content">
                 <div class="modal-header">
@@ -90,17 +91,16 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                    data-toggle="modal"  data-target="#reserveModal" 
-                    >Reserve Table</a>
+                    <button class="btn btn-block btn-warning" id="reservebtn">
+                    <span>Reserve a table</span>                  
                 </div>
             </div>
         </div>
     </header>
 
-<!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$Reserve a table modle $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+<!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$Reserve a table Modal $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
-    <div id="reserveModal" class="modal fade" role="dialog">
+    <div id="reservemodal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             
             <div class="modal-content">
@@ -158,7 +158,7 @@
         </div>
     
 
-
+<!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$Carousedl$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
     <div class="container">
         <div class="row row-content">
@@ -270,56 +270,8 @@
         </div>
 
     </div>
-    <!--****************************************Reserve  a Table****************************************-->
-    <div class="container"> 
-        <div class="row row-content align-items-center">
-            
-            <div class="col-sm-8 offset-sm-2">
-            
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                    <div class="card-body">
-                        <dl class="row form-check-inline ">
-                            <div class="cardy col-12 col-sm-4">
-                                <dt >Number of Guests</dt>
-                            </div>
-                            <div class="col-12 col-sm-8">
-                                <dd>
-                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked> 1
-                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" > 2
-                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" > 3
-                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" > 4
-                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" > 5
-                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" > 6
-                                </dd>
-                            </div>
-                            <div class="cardy col-12 col-sm-4">                           
-                                <dt >Date and time</dt>                                                 
-                            </div>  
-                            <div class="col-sm-4">
-                                <dd>
-                                <input type="text" class="form-control" id="date" name="date" placeholder="Date">                                                                           
-                                </dd>
-                            </div>
-                            <div class="col-sm-4">
-                            <dd>
-                                <input type="text" class="form-control" id="date" name="date" placeholder="Time">                                                                           
-                                </dd>                                
-                            </div>
-                            <div class=" cardy col-2 offset-4">
-                                <dd>
-                                    <button type="submit" class="btn btn-primary">
-                                        Reserve
-                                    </button>                                                                           
-                                </dd>
-                            </div>
-                        </dl>
-                    </div>
-                </div>                           
-            </div>
-        </div>
-    </div>
 
+<!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FOOTER \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <footer class="footer">
         <div class="container">
@@ -342,7 +294,7 @@
                         <i class= "fa fa-phone fa-lg"></i> : +852 1234 5678<br>
                         <i class= "fa fa-fax fa-lg"></i> : +852 8765 4321<br>
                         <i class= "fa fa-envelope fa-lg"></i> : <a href="mailto:confusion@food.net">confusion@food.net</a>
-		            </address>
+                    </address>
                 </div>
                 <div class="col-12 col-sm-4 align-self-center">
                     <div class="text-center">
@@ -367,24 +319,24 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#mycarousel').carousel({interval: 2000});
-            $("#carouselButton").click(function(){
-                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass('fa-pause');
-                    $("#carouselButton").children("span").addClass('fa-play');
-                }
-                else if ($("#carouselButton").children("span").hasClass('fa-play')){
-                    $("#mycarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');                    
-                }
-            });
-        });        
-    </script>
+    <script> src="js/scripts.js" </script>
 
+<script>
+    $(document).ready(function(){   
+    $("#reservebtn").click(function(){
+        $("#reservemodal").modal();   
+        });         
+    });
+</script>
+
+<script>
+    $(document).ready(function(){   
+    $("#loginbtn").click(function(){
+        $("#loginmodal").modal();   
+        });         
+    });
+</script>
+    
 </body>
 
 </html>
