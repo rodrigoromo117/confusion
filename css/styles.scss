@@ -54,10 +54,8 @@ body{
     padding: 10px;
 }
 
-.modal-header{
-    background-color: $background-dark;
 
-}
+
 .carousel {
     background:$background-dark;
 
@@ -79,3 +77,18 @@ body{
     z-index: 1;
 }
 
+
+.modal-header{
+    background: $background-dark;
+    color: floralwhite;
+    .close{
+        color: floralwhite;
+    }
+
+}
+
+.modal-body{
+    background: $background-pale;
+    
+
+}
